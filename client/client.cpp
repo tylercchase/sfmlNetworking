@@ -3,16 +3,16 @@
 int main(){
     sf::UdpSocket socket;
 
-    char data[100] = "Hello World!";
+    std::string data;
 
     // bind the socket to a port
     if (socket.bind(54000) != sf::Socket::Done)
     {
         // error...
     }
-    sf::IpAddress recipient = "192.168.0.5";
+    sf::IpAddress recipient = "165.227.5.237";
     unsigned short port = 54000;
-    if (socket.send(data, 100, recipient, port) != sf::Socket::Done)
+    if (socket.send(data.c_str(), data.size(), recipient, port) != sf::Socket::Done)
     {
         // error...
     }

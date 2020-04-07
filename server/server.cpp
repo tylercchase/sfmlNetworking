@@ -2,6 +2,7 @@
 #include <iostream>
 
 int main(){
+    while(true){
     sf::UdpSocket socket;
 
     // bind the socket to a port
@@ -9,15 +10,17 @@ int main(){
     {
         // error...
     }
-    char data[100];
+    char data[512];
 
     std::size_t received;
 
     sf::IpAddress sender;
     unsigned short port;
-    if (socket.receive(data, 100, received, sender, port) != sf::Socket::Done)
+    if (socket.receive(data, 512, received, sender, port) != sf::Socket::Done)
     {
         // error...
     }
     std::cout << "Received " << received << " bytes from " << sender << " on port " << port << std::endl;
+
+    }
 }
