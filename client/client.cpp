@@ -3,7 +3,7 @@
 int main(){
     sf::UdpSocket socket;
 
-    std::string data;
+    std::string data("Hello RAWR XD owo *nuzzles youor forehead uwu**");
 
     // bind the socket to a port
     if (socket.bind(54000) != sf::Socket::Done)
